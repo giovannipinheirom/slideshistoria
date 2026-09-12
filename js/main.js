@@ -59,9 +59,11 @@ document.querySelectorAll('.faq-question').forEach(question => {
     let countdownInterval = null;
 
     // Intercept basic plan button
+    let basicUrl = '';
     document.querySelectorAll('.btn-basico').forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
+            basicUrl = this.href;
             openPopup();
         });
     });
@@ -76,6 +78,9 @@ document.querySelectorAll('.faq-question').forEach(question => {
         popup.classList.remove('active');
         document.body.style.overflow = '';
         if (countdownInterval) clearInterval(countdownInterval);
+        if (basicUrl) {
+            window.location.href = basicUrl;
+        }
     }
 
     popupClose.addEventListener('click', closePopup);
