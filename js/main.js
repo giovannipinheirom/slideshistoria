@@ -162,12 +162,12 @@ document.querySelectorAll('.faq-question').forEach(question => {
 
         setTimeout(() => {
             toast.classList.remove('show');
-        }, 3500);
+        }, 6000);
     }
 
-    // Start after 3 seconds, then every 5 seconds
+    // Start after 3 seconds, then every 12 seconds
     setTimeout(() => {
         showNotification();
-        setInterval(showNotification, 5000);
+        setInterval(showNotification, 12000);
     }, 3000);
 })();
